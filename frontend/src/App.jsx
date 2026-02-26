@@ -7,23 +7,23 @@ import SettingsPage from './pages/SettingsPage'
 import ProfilePage from './pages/ProfilePage'
 import { useAuthStore } from './store/useAuthStore'
 import { useEffect } from 'react'
-import{useThemeStore} from './store/useThemeStore'
+import { useThemeStore } from './store/useThemeStore'
 import { Loader } from "lucide-react"
 import { Toaster } from 'react-hot-toast'
 
 function App() {
-  const { authUser, checkAuth, ischeckingAuth,onlineUsers } = useAuthStore()
+  const { authUser, checkAuth, isCheckingAuth, onlineUsers } = useAuthStore()
 
-  const {theme} = useThemeStore()
+  const { theme } = useThemeStore()
 
-  console.log({onlineUsers})
+  console.log({ onlineUsers })
   useEffect(() => {
     checkAuth()
   }, [checkAuth])
 
   console.log({ authUser })
 
-  if (ischeckingAuth && !authUser) {
+  if (isCheckingAuth && !authUser) {
     return (
       <div className='flex items-center justify-center h-screen'>
         <Loader className="size-10 animate-spin" />

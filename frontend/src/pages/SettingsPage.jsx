@@ -3,12 +3,12 @@ import { THEMES } from '../constants/index';
 import { Send } from 'lucide-react';
 
 const PREVIEW_MESSAGES = [
-  { id: 1, content: "Hey! How's it going?", isSent: false }, 
+  { id: 1, content: "Hey! How's it going?", isSent: false },
   { id: 2, content: "I'm doing great! Just working on new features.", isSent: true }
 ];
 
 const SettingsPage = () => {
-  const { theme, setTheme } = useThemeStore(); 
+  const { theme, setTheme } = useThemeStore();
 
   return (
     <div className='h-screen container mx-auto px-4 pt-20 max-w-5xl'>
@@ -64,7 +64,7 @@ const SettingsPage = () => {
                 </div>
 
                 {/* Chat Messages */}
-                <div className="p-4 space-y-4 `min-h-[200px]` overflow-y-auto bg-base-100">
+                <div className="p-4 space-y-4 min-h-[200px] overflow-y-auto bg-base-100">
                   {PREVIEW_MESSAGES.map((message) => (
                     <div
                       key={message.id}
